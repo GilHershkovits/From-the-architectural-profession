@@ -1,0 +1,62 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const browseBtn = document.getElementById('browse-btn');
+    const fileInfo = document.getElementById('file-info');
+
+    // פתיחת חלון בחירת קובץ בלחיצה על הכפתור
+    browseBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // מונע ריענון של העמוד
+        e.stopPropagation(); // מונע התנגשות עם לחיצה על הקופסה עצמה
+        fileInput.click();
+    });
+
+    // פתיחת חלון בלחיצה על כל הקופסה המקווקות
+    dropZone.addEventListener('click', () => {
+        fileInput.click();
+    });
+
+    // אפקטים חזותיים בזמן גרירת קובץ
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('dragover');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        
+        if (e.dataTransfer.files.length > 0) {
+            handleFile(e.dataTransfer.files[0]);
+        }
+    });
+
+    // טיפול בבחירת קובץ דרך החלון הרגיל
+    fileInput.addEventListener('change', function() {
+        if (this.files.length > 0) {
+            handleFile(this.files[0]);
+        }
+    });
+
+    // הפונקציה שקוראת את הקובץ
+    function handleFile(file) {
+        // המרת גודל הקובץ למגה-בייט
+        const fileSizeMB = (file.size / (1024 * 1024)).toFixed(2);
+        
+        // הצגת המידע למשתמש
+        fileInfo.style.display = 'block';
+        fileInfo.innerHTML = `
+            <strong>הקובץ נקרא בהצלחה!</strong><br>
+            שם הקובץ: ${file.name}<br>
+            גודל: ${fileSizeMB} MB<br>
+            סוג: ${file.type || 'לא ידוע'}
+        `;
+
+        // כאן בעתיד נוסיף את הקוד ששולח את הקובץ לשרת לרנדור או חישוב קונסטרוקציה
+        console.log("הקובץ מוכן לעיבוד:", file.name);
+    }
+});
