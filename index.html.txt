@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פורטפוליו | אדריכלות ועיצוב</title>
+    <style>
+        /* עיצוב כללי */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* סרגל ניווט */
+        nav {
+            background: #fff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* אזור ראשי (Hero) */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            margin-top: 25px;
+            padding: 12px 30px;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* גלריית פרויקטים */
+        .projects {
+            padding: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">DESIGNER NAME</div>
+        <div>
+            <a href="#contact" style="text-decoration: none; color: #333;">צור קשר</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>חדשנות במרחב האדריכלי</h1>
+        <p>תכנון, עיצוב וביצוע פרויקטים עם תשומת לב לפרטים הקטנים ביותר.</p>
+        <a href="#projects" class="btn">צפייה בפרויקטים</a>
+    </header>
+
+    <h2 style="text-align: center; margin-top: 50px;" id="projects">פרויקטים נבחרים</h2>
+
+    <section class="projects">
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=500&q=80" alt="פרויקט 1">
+            <h3>תכנון מבנה מגורים</h3>
+            <p>שילוב חומרים מודרניים ובנייה ירוקה.</p>
+        </div>
+
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1503387762-592dee58c160?auto=format&fit=crop&w=500&q=80" alt="פרויקט 2">
+            <h3>עיצוב פנים תעשייתי</h3>
+            <p>שימוש בבטון חשוף ואלמנטים ממתכת.</p>
+        </div>
+
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1518005020250-675f210fe3a2?auto=format&fit=crop&w=500&q=80" alt="פרויקט 3">
+            <h3>פרטי בניין ופיתוח</h3>
+            <p>שרטוטים טכניים וביצוע בשטח.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 כל הזכויות שמורות</p>
+    </footer>
+
+</body>
+</html>
