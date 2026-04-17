@@ -1,0 +1,114 @@
+/* עיצוב כללי */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* רקע שחור */
+    color: #ffffff; /* טקסט לבן */
+    font-family: 'Heebo', sans-serif; /* פונט נקי */
+    overflow-x: hidden;
+}
+
+.main-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* אזור הרקע עם השרטוט */
+.architect-drawing-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* כאן אתה מכניס את נתיב התמונה שלך */
+    /* background-image: url('blueprint-drawing.svg'); */
+    
+    /* הגדרות תמונה */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* או contain, תלוי בתמונה */
+    
+    /* הפיכת התמונה לעדינה יותר (אופסיטי נמוך) */
+    opacity: 0.15; 
+    z-index: 1; /* מאחורי הטקסט */
+}
+
+/* עיצוב הטקסט */
+.hero-section {
+    position: relative;
+    z-index: 10; /* מעל השרטוט */
+    padding: 20px;
+    max-width: 800px;
+}
+
+.main-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* צל עדין לטקסט */
+}
+
+.sub-title {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #e0e0e0; /* לבן מעט עמום */
+    margin-bottom: 30px;
+}
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #b0b0b0;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* עיצוב כפתורים */
+.action-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #ffffff; /* כפתור לבן */
+    color: #000000;
+}
+
+.btn-primary:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* התאמה לניידים */
+@media (max-width: 768px) {
+    .main-title { font-size: 2.5rem; }
+    .sub-title { font-size: 1.4rem; }
+    .action-buttons { flex-direction: column; gap: 10px; }
